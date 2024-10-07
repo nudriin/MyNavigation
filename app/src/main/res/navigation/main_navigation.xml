@@ -44,5 +44,13 @@
         <argument
             android:name="stock"
             app:argType="long" />
+        <action
+            android:id="@+id/action_detailCategoryFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
     </fragment>
+
+
 </navigation>

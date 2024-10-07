@@ -31,13 +31,14 @@ class CategoryFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.btnCategoryLifestyle.setOnClickListener {
-            val mBundle = Bundle()
-            mBundle.putString(EXTRA_NAME, "Lifestyle")
-            mBundle.putLong(EXTRA_STOCK, 7)
 
-            Navigation.findNavController(it).navigate(R.id.action_categoryFragment_to_detailCategoryFragment, mBundle)
+            // send data with safeargs
+            val toDetailCategoryFragment = CategoryFragmentDirections.actionCategoryFragmentToDetailCategoryFragment("Lifestyle", 7)
+            // navigate and send the data
+            Navigation.findNavController(it).navigate(toDetailCategoryFragment)
+
             // navigate dengan mengirimkan data bundle
-//            it.findNavController().navigate(R.id.action_categoryFragment_to_detailCategoryFragment, mBundle)
+            // it.findNavController().navigate(R.id.action_categoryFragment_to_detailCategoryFragment, mBundle)
         }
     }
 
